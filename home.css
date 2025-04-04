@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(83, 71, 80);
+}
+
+.menu{
+    background-color: rgb(36, 30, 34);
+    height: 120px;
+    width: auto;
+    border: solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: left;
+}
+
+#titulo{
+    color: palevioletred;
+    justify-self: center;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+}
+
+#navegacao{
+    color: plum;
+    transition: 1s;
+    scale: (1.1);
+}
