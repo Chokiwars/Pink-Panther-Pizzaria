@@ -1,26 +1,93 @@
-body{
-    background-color: rgb(83, 71, 80);
+* {
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.menu{
-    background-color: rgb(36, 30, 34);
+body {
+    background-color: rgb(29, 55, 94);
+    color: pink;
+}
+
+/* Estilo do cabeçalho */
+.menu {
+    background-color: rgb(11, 24, 43);
     height: 120px;
-    width: auto;
-    border: solid black;
+    width: 100%;
     border-radius: 15px;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-#titulo{
+#titulo {
     color: palevioletred;
-    justify-self: center;
-    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-size: 2rem;
+    transition: color 1s;
 }
 
-#navegacao{
-    color: plum;
-    transition: 1s;
-    scale: (1.1);
+#titulo:hover {
+    color: rgb(255, 118, 225);
+}
+
+/* Estilo do menu de navegação */
+#navegacao {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#navegacao li {
+    font-size: 1.1rem;
+}
+
+#navegacao a {
+    text-decoration: none;
+    color: pink;
+    padding: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+#navegacao a:hover {
+    color: palevioletred;
+    transform: scale(1.1);
+}
+
+/* Menu hamburguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #navegacao {
+        position: absolute;
+        top: 120px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(36, 30, 34);
+        flex-direction: column;
+        gap: 15px;
+        display: none;
+        padding: 20px;
+    }
+
+    #navegacao.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
 }
