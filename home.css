@@ -69,6 +69,32 @@ body {
     border-radius: 10px;
 }
 
+.menuHome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 80%;
+    height: 50%;
+}
+
+.foto-combo{
+    width: 25%;
+}
+.combos{
+    width: 25%;
+}
+
+.imagem {
+    width: 45%;
+}
+
+.imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     #navegacao {
@@ -90,4 +116,21 @@ body {
     .menu-toggle {
         display: flex;
     }
+
+    main {
+        display: flex;
+        height: 100vh;
+    }
+    
+   
+    
+     div {
+        background-color: rgb(36, 30, 34);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
 }
+
+    
