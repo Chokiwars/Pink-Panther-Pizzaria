@@ -103,35 +103,78 @@
             }
         }
 
-        /* Container para alinhar as divisões */
-        .container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 20px;
-        }
+            /* Container para alinhar as divisões */
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+    }
 
-        /* Lateral Esquerda */
-        .lateral-esquerda {
-            width: 20%; /* Menor que 25% para ajuste visual */
-        }
+    /* Lateral Esquerda */
+    .lateral-esquerda {
+        width: 20%; /* Menor que 25% para ajuste visual */
+        background-color: rgb(36, 30, 34); /* Fundo mais escuro */
+        padding: 10px;
+        border-radius: 8px; /* Bordas arredondadas para a lateral */
+    }
 
-        .lateral-esquerda h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
+    .lateral-esquerda h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: pink;
+    }
 
-        .lateral-esquerda p {
-            margin-bottom: 10px;
-        }
+    .lateral-esquerda p {
+        margin-bottom: 10px;
+        color: #fff;
+    }
 
-        .promo-imagem {
-            
-            background-color: rgb(36, 30, 34);
-            width: 50%;
-            height: auto;
-            margin-bottom: 10px;
-        }
+    /* Estilo para cada item de promoção */
+    .promo-item {
+        margin-bottom: 15px;
+    }
+
+    .promo-imagem {
+        width: 50%;
+        height: auto;
+        display: flex;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    /* Estilo do texto das promoções */
+    .promo-texto {
+        color: #fff;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    /* Lateral Central (Imagem clicável) */
+    .lateral-central {
+        width: 50%; /* Largura maior para a imagem central */
+    }
+
+    .imagem-central {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .imagem-central:hover {
+        transform: scale(1.05);
+    }
+
+    /* Divisão Direita (Imagem) */
+    .lateral-direita {
+        width: 25%;
+    }
+
+    .imagem-direita {
+        width: 100%;
+        height: auto;
+    }
 
         /* Lateral Central (Imagem clicável) */
         .lateral-central {
@@ -189,24 +232,34 @@
             <div class="lateral-esquerda">
                 <h2>Promoções</h2>
                 <p>Confira nossos combos especiais!</p>
-                <img src="imagens/icone pizza.png" alt="Promoção 1" class="promo-imagem">
-                <img src="imagens/icone pizza.png" alt="Promoção 2" class="promo-imagem">
-                <img src="imagens/icone pizza.png" alt="Promoção 3" class="promo-imagem">
+                <div class="promo-item">
+                    <img src="imagens/icone pizza.png" alt="Promoção 1" class="promo-imagem">
+                    <p class="promo-texto">Combo Família - Pizzas grandes + bebida</p>
+                </div>
+                <div class="promo-item">
+                    <img src="imagens/icone pizza.png" alt="Promoção 2" class="promo-imagem">
+                    <p class="promo-texto">Combo Individual - Pizza + Sobremesa</p>
+                </div>
+                <div class="promo-item">
+                    <img src="imagens/icone pizza.png" alt="Promoção 3" class="promo-imagem">
+                    <p class="promo-texto">Combo Duplo - 2 Pizzas + Refri</p>
+                </div>
             </div>
-
+    
             <!-- Lateral Central (Imagem clicável) -->
             <div class="lateral-central">
-                <a href="https://www.youtube.com/watch?app=desktop&v=_rd6Ad6F-80&t=4m15s">
+                <a href="https://www.youtube.com/watch?app=desktop&v=_rd6Ad6F-80&t=1s"  target="_blank">
                     <img src="imagens/pinkaroni pizza.webp" alt="Imagem Central" class="imagem-central">
                 </a>
             </div>
-
+    
             <!-- Divisão Direita (Imagem) -->
             <div class="lateral-direita">
                 <img src="imagens/ideias.webp" alt="Pizza Direita" class="imagem-direita">
             </div>
         </div>
     </main>
+    
     <script src="script.js"></script>
 </body>
 </html>

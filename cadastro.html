@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Cadastro</title>
+    <style>
+        /* Estilo básico do body */
+        body {
+            background-color: #f2e6f9; /* Fundo suave */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Ajusta para 100% da altura disponível */
+            margin: 0;
+            padding: 20px; /* Para evitar que o conteúdo toque as bordas da tela */
+            overflow: auto; /* Permite rolar caso o conteúdo ultrapasse a altura da tela */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Container do formulário */
+        .cadastro-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Limita a largura máxima do formulário */
+            box-sizing: border-box; /* Garante que o padding não afete a largura */
+            animation: slideInUp 0.6s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Animação de entrada do formulário */
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efeito hover no container */
+        .cadastro-container:hover {
+            transform: translateY(-5px); /* Eleva o container ligeiramente */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Título */
+        .cadastro-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #6a1b9a;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Estilo dos campos */
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column; /* Garante que o label e o input fiquem empilhados */
+            align-items: center; /* Centraliza os campos horizontalmente */
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #6a1b9a;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Efeito de hover nos labels */
+        .form-group label:hover {
+            color: #8e24aa;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #9c4dcc;
+            background-color: #f3e5f5;
+            color: #6a1b9a;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efeito de foco nos inputs */
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #8e24aa;
+            box-shadow: 0 0 8px rgba(142, 36, 170, 0.6);
+        }
+
+        /* Efeito hover nos inputs */
+        .form-group input:hover {
+            background-color: #e1bee7;
+        }
+
+        /* Estilo dos radio buttons e checkboxes */
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .form-group input[type="radio"]:hover,
+        .form-group input[type="checkbox"]:hover {
+            transform: scale(1.1);
+        }
+
+        /* Botão de envio */
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8e24aa;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efeito de hover no botão */
+        .submit-button:hover {
+            background-color: #7b1fa2;
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Agrupamento dos radio buttons e checkboxes em linha */
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap; /* Para que eles se ajustem bem em telas menores */
+            transition: transform 0.3s ease;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito de hover nas opções de radio e checkbox */
+        .radio-group label:hover,
+        .checkbox-group label:hover {
+            transform: scale(1.05);
+        }
+
+        /* Ajustar layout em telas menores */
+        @media (max-width: 768px) {
+            .form-group {
+                width: 100%;
+            }
+
+            .radio-group,
+            .checkbox-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+    <script>
+        // Função para verificar se a opção "Selecione seu estado" foi escolhida
+        function verificarEstado() {
+            var estadoSelect = document.getElementById("estado");
+            if (estadoSelect.value === "") {
+                estadoSelect.setCustomValidity("Por favor, selecione um estado válido.");
+            } else {
+                estadoSelect.setCustomValidity(""); // Limpa o erro se um estado válido for escolhido
+            }
+        }
+
+        // Função para redirecionar após o envio do formulário
+        function redirecionar() {
+            // Aqui você pode verificar se o formulário é válido e fazer o redirecionamento
+            window.location.href = "formulario.html"; // Redireciona para o formulário após envio
+        }
+    </script>
+</head>
+<body>
+    <div class="cadastro-container">
+        <h2>Cadastro</h2>
+        <form action="h.html" method="post" onsubmit="redirecionar(); return false;">
+            <!-- Campo Nome -->
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <!-- Campo Usuário -->
+            <div class="form-group">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+
+            <!-- Campo Senha -->
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <!-- Campo Sexo -->
+            <div class="form-group">
+                <label>Sexo</label>
+                <div class="radio-group">
+                    <label for="sexo-masculino">Masculino
+                        <input type="radio" id="sexo-masculino" name="sexo" value="masculino" required>
+                    </label>
+                    <label for="sexo-feminino">Feminino
+                        <input type="radio" id="sexo-feminino" name="sexo" value="feminino" required>
+                    </label>
+                    <label for="sexo-outro">Outro
+                        <input type="radio" id="sexo-outro" name="sexo" value="outro">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Campo Interesses -->
+            <div class="form-group">
+                <label>Interesses</label>
+                <div class="checkbox-group">
+                    <label for="interesse-musica">Música
+                        <input type="checkbox" id="interesse-musica" name="interesses" value="musica">
+                    </label>
+                    <label for="interesse-esportes">Esportes
+                        <input type="checkbox" id="interesse-esportes" name="interesses" value="esportes">
+                    </label>
+                    <label for="interesse-tecnologia">Tecnologia
+                        <input type="checkbox" id="interesse-tecnologia" name="interesses" value="tecnologia">
+                    </label>
+                    <label for="interesse-viagens">Viagens
+                        <input type="checkbox" id="interesse-viagens" name="interesses" value="viagens">
+                    </label>
+                    <label for="interesse-culinaria">Culinária
+                        <input type="checkbox" id="interesse-culinaria" name="interesses" value="culinaria">
+                    </label>
+                    <label for="interesse-artes">Artes
+                        <input type="checkbox" id="interesse-artes" name="interesses" value="artes">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Campo Estado -->
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado" required onchange="verificarEstado()">
+                    <option value="">Selecione seu estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit" class="submit-button">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
