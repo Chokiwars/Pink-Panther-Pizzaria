@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,161 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="home.css">
     <title>Pink Panther's Pizzaria</title>
+
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(29, 55, 94);
+            color: pink;
+        }
+
+        /* Estilo do cabeçalho */
+        .menu {
+            background-color: rgb(11, 24, 43);
+            height: 120px;
+            width: 100%;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        #titulo {
+            color: palevioletred;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            font-size: 2rem;
+            transition: color 1s;
+        }
+
+        #titulo:hover {
+            color: rgb(255, 118, 225);
+        }
+
+        /* Estilo do menu de navegação */
+        #navegacao {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        #navegacao li {
+            font-size: 1.1rem;
+        }
+
+        #navegacao a {
+            text-decoration: none;
+            color: pink;
+            padding: 10px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        #navegacao a:hover {
+            color: palevioletred;
+            transform: scale(1.1);
+        }
+
+        /* Menu hamburguer */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #navegacao {
+                position: absolute;
+                top: 120px;
+                left: 0;
+                width: 100%;
+                background-color: rgb(36, 30, 34);
+                flex-direction: column;
+                gap: 15px;
+                display: none;
+                padding: 20px;
+            }
+
+            #navegacao.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* Container para alinhar as divisões */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Lateral Esquerda */
+        .lateral-esquerda {
+            width: 20%; /* Menor que 25% para ajuste visual */
+        }
+
+        .lateral-esquerda h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .lateral-esquerda p {
+            margin-bottom: 10px;
+        }
+
+        .promo-imagem {
+            
+            background-color: rgb(36, 30, 34);
+            width: 50%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Lateral Central (Imagem clicável) */
+        .lateral-central {
+            width: 50%; /* Largura maior para a imagem central */
+        }
+
+        .imagem-central {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito ao passar o mouse sobre a imagem central */
+        .imagem-central:hover {
+            transform: scale(1.05);
+        }
+
+        /* Divisão Direita */
+        .lateral-direita {
+            width: 25%; /* Ajustado para corresponder com a largura da lateral esquerda */
+        }
+
+        .imagem-direita {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
+
 <body>
     <header class="menu">
         <nav>
@@ -29,6 +184,30 @@
         </nav>
     </header>
 
+    <main>
+        <div class="container">
+            <!-- Lateral Esquerda -->
+            <div class="lateral-esquerda">
+                <h2>Promoções</h2>
+                <p>Confira nossos combos especiais!</p>
+                <img src="imagens/icone pizza.png" alt="Promoção 1" class="promo-imagem">
+                <img src="imagens/icone pizza.png" alt="Promoção 2" class="promo-imagem">
+                <img src="imagens/icone pizza.png" alt="Promoção 3" class="promo-imagem">
+            </div>
+
+            <!-- Lateral Central (Imagem clicável) -->
+            <div class="lateral-central">
+                <a href="https://www.youtube.com/watch?app=desktop&v=_rd6Ad6F-80&t=4m15s">
+                    <img src="imagens/pinkaroni pizza.webp" alt="Imagem Central" class="imagem-central">
+                </a>
+            </div>
+
+            <!-- Divisão Direita (Imagem) -->
+            <div class="lateral-direita">
+                <img src="imagens/ideias.webp" alt="Pizza Direita" class="imagem-direita">
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
