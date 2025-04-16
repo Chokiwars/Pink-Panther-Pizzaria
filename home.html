@@ -114,7 +114,7 @@
 
     /* Lateral Esquerda */
     .lateral-esquerda {
-        width: 20%; /* Menor que 25% para ajuste visual */
+        width: 25%; /* Menor que 25% para ajuste visual */
         background-color: rgb(36, 30, 34); /* Fundo mais escuro */
         padding: 10px;
         border-radius: 8px; /* Bordas arredondadas para a lateral */
@@ -131,6 +131,25 @@
         color: #fff;
     }
 
+     /* Lateral Direita */
+     .lateral-direita {
+        width: 25%; /* Menor que 25% para ajuste visual */
+        background-color: rgb(36, 30, 34); /* Fundo mais escuro */
+        padding: 10px;
+        border-radius: 8px; /* Bordas arredondadas para a lateral */
+    }
+
+    .lateral-direita h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: pink;
+    }
+
+    .lateral-direita p {
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    
     /* Estilo para cada item de promoção */
     .promo-item {
         margin-bottom: 15px;
@@ -253,10 +272,23 @@
                     <img src="imagens/pinkaroni pizza.webp" alt="Imagem Central" class="imagem-central">
                 </a>
             </div>
-    
-            <!-- Divisão Direita (Imagem) -->
-            <div class="lateral-direita">
-                <img src="imagens/ideias.webp" alt="Pizza Direita" class="imagem-direita">
+
+             <!-- Lateral Direita -->
+             <div class="lateral-direita">
+                <h2>Promoções</h2>
+                <p>Confira nossos combos especiais!</p>
+                <div class="promo-item">
+                    <img src="imagens/icone pizza.png" alt="Promoção 1" class="promo-imagem">
+                    <p class="promo-texto">Combo Família - Pizzas grandes + bebida</p>
+                </div>
+                <div class="promo-item">
+                    <img src="imagens/icone pizza.png" alt="Promoção 2" class="promo-imagem">
+                    <p class="promo-texto">Combo Individual - Pizza + Sobremesa</p>
+                </div>
+                <div class="promo-item">
+                    <img src="imagens/icone pizza.png" alt="Promoção 3" class="promo-imagem">
+                    <p class="promo-texto">Combo Duplo - 2 Pizzas + Refri</p>
+                </div>
             </div>
         </div>
     </main>
